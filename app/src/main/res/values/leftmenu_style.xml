@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="slidingMenuItemTextViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50.0dip</item>
+        <item name="android:checkable">true</item>
+        <item name="android:drawablePadding">1.0dip</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15.0dip</item>
+        <item name="android:paddingRight">15.0dip</item>
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="slidingMenuDividerStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2.0dip</item>
+        <item name="android:background">@drawable/biz_pc_account_line</item>
+    </style>
+</resources>
