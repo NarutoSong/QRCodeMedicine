@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/slidingMenuUserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -23,7 +24,7 @@
             app:border_width="1dp" />
 
         <TextView
-            android:id="@+id/slidingMenuUserName"
+
             style="@style/slidingMenuItemTextViewStyle"
             android:layout_toRightOf="@+id/profile_image"
             android:text="用户名" />
