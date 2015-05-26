@@ -7,7 +7,7 @@ import android.os.CountDownTimer;
 import android.view.Window;
 
 public class Activity_Welcome extends Activity {
-	// 欢迎界面。有图记改
+	// 欢迎界面,有图记改
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

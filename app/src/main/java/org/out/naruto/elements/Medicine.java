@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 
 public class Medicine implements Serializable{
+    private int medicineId;//药品ID
+
     private String medicineName;//药品名称
     private String medicineEnglishName;
     private String medicinePinyinName;
@@ -30,119 +32,143 @@ public class Medicine implements Serializable{
         return medicineName;
     }
 
-    public void setMedicineName(String medicineName) {
+    public Medicine setMedicineName(String medicineName) {
         this.medicineName = medicineName;
+        return this;
     }
 
     public String getMedicineEnglishName() {
         return medicineEnglishName;
     }
 
-    public void setMedicineEnglishName(String medicineEnglishName) {
+    public Medicine setMedicineEnglishName(String medicineEnglishName) {
         this.medicineEnglishName = medicineEnglishName;
+        return this;
     }
 
     public String getMedicinePinyinName() {
         return medicinePinyinName;
     }
 
-    public void setMedicinePinyinName(String medicinePinyinName) {
+    public Medicine setMedicinePinyinName(String medicinePinyinName) {
         this.medicinePinyinName = medicinePinyinName;
+        return this;
     }
 
     public String getMedicineComponent() {
         return medicineComponent;
     }
 
-    public void setMedicineComponent(String medicineComponent) {
+    public Medicine setMedicineComponent(String medicineComponent) {
         this.medicineComponent = medicineComponent;
+        return this;
     }
 
     public String getMedicineProperty() {
         return medicineProperty;
     }
 
-    public void setMedicineProperty(String medicineProperty) {
+    public Medicine setMedicineProperty(String medicineProperty) {
         this.medicineProperty = medicineProperty;
+        return this;
     }
 
     public String getMedicineIndications() {
         return medicineIndications;
     }
 
-    public void setMedicineIndications(String medicineIndications) {
+    public Medicine setMedicineIndications(String medicineIndications) {
         this.medicineIndications = medicineIndications;
+        return this;
     }
 
     public String getMedicineSpecifications() {
         return medicineSpecifications;
     }
 
-    public void setMedicineSpecifications(String medicineSpecifications) {
+    public Medicine setMedicineSpecifications(String medicineSpecifications) {
         this.medicineSpecifications = medicineSpecifications;
+        return this;
     }
 
     public String getMedicineUsage() {
         return medicineUsage;
     }
 
-    public void setMedicineUsage(String medicineUsage) {
+    public Medicine setMedicineUsage(String medicineUsage) {
         this.medicineUsage = medicineUsage;
+        return this;
     }
 
     public String getMedicineUntowardEffect() {
         return medicineUntowardEffect;
     }
 
-    public void setMedicineUntowardEffect(String medicineUntowardEffect) {
+    public Medicine setMedicineUntowardEffect(String medicineUntowardEffect) {
         this.medicineUntowardEffect = medicineUntowardEffect;
+        return this;
     }
 
     public String getMedicineTaboos() {
         return medicineTaboos;
     }
 
-    public void setMedicineTaboos(String medicineTaboos) {
+    public Medicine setMedicineTaboos(String medicineTaboos) {
         this.medicineTaboos = medicineTaboos;
+        return this;
     }
 
     public String getMedicineAttentions() {
         return medicineAttentions;
     }
 
-    public void setMedicineAttentions(String medicineAttentions) {
+    public Medicine setMedicineAttentions(String medicineAttentions) {
         this.medicineAttentions = medicineAttentions;
+        return this;
     }
 
     public String getMedicineInteraction() {
         return medicineInteraction;
     }
 
-    public void setMedicineInteraction(String medicineInteraction) {
+    public Medicine setMedicineInteraction(String medicineInteraction) {
         this.medicineInteraction = medicineInteraction;
+        return this;
     }
 
     public String getExecutiveStandard() {
         return executiveStandard;
     }
 
-    public void setExecutiveStandard(String executiveStandard) {
+    public Medicine setExecutiveStandard(String executiveStandard) {
         this.executiveStandard = executiveStandard;
+        return this;
     }
 
     public String getApprovalNumber() {
         return ApprovalNumber;
     }
 
-    public void setApprovalNumber(String approvalNumber) {
+    public Medicine setApprovalNumber(String approvalNumber) {
         ApprovalNumber = approvalNumber;
+        return this;
     }
 
     public String getMedicineCompany() {
         return medicineCompany;
     }
 
-    public void setMedicineCompany(String medicineCompany) {
+    public Medicine setMedicineCompany(String medicineCompany) {
         this.medicineCompany = medicineCompany;
+        return this;
+    }
+
+    public int getMedicineId() {
+        return medicineId;
+    }
+
+    public Medicine setMedicineId(int medicineId) {
+        this.medicineId = medicineId;
+        return this;
     }
 }

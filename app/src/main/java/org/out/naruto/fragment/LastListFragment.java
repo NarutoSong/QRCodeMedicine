@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import org.out.naruto.qrcodemedicine.R;
 
 /**
- * 
- * @author wuwenjie
  * @description 今日
  */
 public class LastListFragment extends Fragment {

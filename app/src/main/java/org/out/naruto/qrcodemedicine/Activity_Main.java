@@ -11,7 +11,7 @@ import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 
 import org.out.naruto.fragment.LeftFragment;
-import org.out.naruto.fragment.MainFragment;
+import org.out.naruto.fragment.Fragment_Main;
 
 
 public class Activity_Main extends SlidingFragmentActivity implements
@@ -39,7 +39,7 @@ public class Activity_Main extends SlidingFragmentActivity implements
         }
 
         if (mContent == null) {
-            mContent = new MainFragment();
+            mContent = new Fragment_Main();
         }
 
 

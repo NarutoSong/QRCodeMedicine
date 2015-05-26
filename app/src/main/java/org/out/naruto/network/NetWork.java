@@ -8,8 +8,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
-import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,9 +28,9 @@ public class NetWork {
 
 
 
-    public JSONArray UserLogin(List<NameValuePair> params,int requestType) {
-        JSONArray jsonArray = null;
+    public String netWork(List<NameValuePair> params, int requestType) {
         HttpPost httpPost = null;
+        String resulte = null;
         switch (requestType) {
             case Type_Login:
                 httpPost = new HttpPost(loginUrl);
@@ -52,17 +50,14 @@ public class NetWork {
                     data += line + "\r\n";
                 }
             }
-            data =data.trim();
-            jsonArray = new JSONArray(data);
+            resulte =data.trim();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (ClientProtocolException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
-        return jsonArray;
+        return resulte;
     }
 }

@@ -14,8 +14,6 @@ import org.out.naruto.qrcodemedicine.Activity_Main;
 import org.out.naruto.qrcodemedicine.R;
 
 /**
- * @author wuwenjie
- * @date 2014/11/14
  * @description 侧边栏菜单
  */
 
@@ -75,11 +73,11 @@ public class LeftFragment extends Fragment implements OnClickListener {
                 startActivity(new Intent(getActivity().getApplicationContext(), Activity_Login.class));
                 break;
             case R.id.slidingMenuItem0: // Main
-                newContent = new MainFragment();
+                newContent = new Fragment_Main();
                 title = getString(R.string.string_main);
                 break;
             case R.id.slidingMenuItem5: // 设置
-                newContent = new MySettingsFragment();
+                newContent = new Fragment_Settings();
                 title = getString(R.string.settings);
                 break;
         }

@@ -1,17 +1,12 @@
 package org.out.naruto.qrcodemedicine;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnCompletionListener;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
@@ -25,9 +20,12 @@ import android.widget.Button;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.out.naruto.camera.CameraManager;
 import org.out.naruto.decoding.CaptureActivityHandler;
 import org.out.naruto.decoding.InactivityTimer;
+import org.out.naruto.elements.Medicine;
 import org.out.naruto.view.FindView;
 
 import java.io.IOException;
@@ -160,38 +158,23 @@ public class Activity_ScanQR extends Activity implements Callback {
 
     public void handleDecode(final Result obj, Bitmap barcode) {
         inactivityTimer.onActivity();
-        playBeepSoundAndVibrate();
-        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        if (barcode == null) {
-            dialog.setIcon(null);
-        } else {
-
-            Drawable drawable = new BitmapDrawable(barcode);
-            dialog.setIcon(drawable);
+        playBeepSoundAndVibrate();//不知道干嘛的……先放在这吧
+        String content = obj.getText();
+        try {
+            JSONObject jsonObject = new JSONObject(content);
+            Medicine medicine = new Medicine();
+            medicine.setMedicineId(jsonObject.getInt("medicineId"))
+                    .setMedicineName(jsonObject.getString("medicineName"))
+                    .setMedicineIndications(jsonObject.getString("medicineIndications"))
+                    .setMedicineUsage(jsonObject.getString("medicineUsage"))
+                    .setMedicineTaboos(jsonObject.getString("medicineTaboos"))
+                    .setMedicineAttentions(jsonObject.getString("medicineAttentions"));
+            Intent intent = new Intent(Activity_ScanQR.this,null);
+            intent.putExtra("medicine", medicine);
+            startActivity(intent);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-        dialog.setTitle("ɨ����");
-        dialog.setMessage(obj.getText());
-        dialog.setNegativeButton("ȷ��", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // ��Ĭ���������ɨ��õ��ĵ�ַ
-                Intent intent = new Intent();
-                intent.setClassName("com.android.browser",
-                        "com.android.browser.BrowserActivity");
-                intent.setAction("android.intent.action.VIEW");
-                Uri content_url = Uri.parse(obj.getText());
-                intent.setData(content_url);
-                startActivity(intent);
-                finish();
-            }
-        });
-        dialog.setPositiveButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                finish();
-            }
-        });
-        dialog.create().show();
     }
 
     private String Analysis() {
@@ -225,9 +208,11 @@ public class Activity_ScanQR extends Activity implements Callback {
     private static final long VIBRATE_DURATION = 200L;
 
     private void playBeepSoundAndVibrate() {
+
         if (playBeep && mediaPlayer != null) {
             mediaPlayer.start();
         }
+
         if (vibrate) {
             Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
             vibrator.vibrate(VIBRATE_DURATION);

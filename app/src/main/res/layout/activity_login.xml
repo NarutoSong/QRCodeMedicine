@@ -19,7 +19,7 @@
         android:text="@string/login_title"
         android:textColor="@color/color_lightgray"
         android:textSize="30sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
@@ -32,6 +32,8 @@
         android:layout_marginTop="30dip"
         android:ems="10"
         android:hint="@string/loginnameshow"
+        android:drawableLeft="@drawable/ic_login_un"
+        android:drawablePadding="2dp"
         android:maxLength="30"
         android:paddingRight="2dp"
         android:textColorHighlight="#7e4d84">
@@ -44,6 +46,7 @@
         style="@style/LoginEditTextStyle"
         android:layout_marginTop="20dip"
         android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_login_pwd"
         android:paddingRight="2dp" />
 
     <Button
