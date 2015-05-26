@@ -15,9 +15,12 @@
 	<string name="remenpassword">记住密码</string>
 	<string name="register">注册新账号</string>
 	<string name="login_title">安 全 用 药 助 手</string>
-	<string name="registerstep1">账户确认</string>
-	<string name="registerstep2">资料完善</string>
-	<string name="registerstep3">注册完成</string>
-
+	<string name="register_acount">账 户</string>
+	<string name="register_acount_hint">请使用邮箱名注册</string>
+	<string name="register_pwd">密 码</string>
+	<string name="register_pwd_hint">密码至少6位</string>
+	<string name="register_checkbox">已阅读并同意</string>
+	<string name="register_tv">《安全用药App服务条款》</string>
+	<string name="register_bt_text">注册该账户</string>
 
 </resources>

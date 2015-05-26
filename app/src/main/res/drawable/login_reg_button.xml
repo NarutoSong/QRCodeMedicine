@@ -8,7 +8,7 @@
         </shape>
     </item>
 
-    <item android:state_focused="true" android:state_pressed="true">
+    <item android:state_pressed="true">
         <shape>
             <gradient android:angle="270" android:endColor="@color/color_login_bt_start" android:startColor="@color/color_login_bt_end" />
             <corners android:radius="4dip" />
